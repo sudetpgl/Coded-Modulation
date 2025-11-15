@@ -16,7 +16,7 @@ function [X,label] = get_ask(M)
 X = zeros(1,M);
 label = zeros(M,log2(M));
 
-
+%%github check
 end
 
 
