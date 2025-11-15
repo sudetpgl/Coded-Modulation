@@ -12,7 +12,7 @@ for i = 1:length(seq_in)
          
     end
      [~,min_pos] = min(diff);
-     seq_out( (i*m-1) : (i*m) ) = label(min_pos,:); 
+     seq_out( (min_pos*m-1):(min_pos*m)) = label(min_pos,:); 
 end 
 end 
 
