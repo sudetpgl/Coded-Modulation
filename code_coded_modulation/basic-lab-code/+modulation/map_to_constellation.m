@@ -17,16 +17,12 @@ function [seq_out] = map_to_constellation(seq_in,X,label)
 seq_out = zeros(1,length(seq_in)/size(label,2));
 m = size(label,2);
 no_symb = length(seq_in)/m;
-bits = seq_in(1:1+m-1); 
-for i = 1:size(label,1)
-    idx = find(ismember(label, bits,'rows'));
-end
-seq_out(1) = X(idx); 
-count = 1;
-for i = 1+m:m:length(seq_in) 
+mapped = [];
+for i = 1:m:length(seq_in) 
     bits = seq_in(i:i+m-1); 
     idx = find(ismember(label, bits,'rows'));
-    seq_out(i-count) = X(idx);   
-    count = count + 1;
-end      
+    mapped_symb = X(idx);   
+    mapped = [mapped, mapped_symb];
+end     
+seq_out = mapped;
 end
