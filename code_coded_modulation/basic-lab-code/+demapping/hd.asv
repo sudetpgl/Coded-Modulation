@@ -6,12 +6,6 @@ seq_out = zeros(1,length(seq_in)*size(label,2));
 m = size(label,2);
 mapped = [];
 
-for i = 1:length(seq_in)
-    for j = 1:length(X)
-        diff(j) = abs(seq_in(i)-X(j));
+for i = 1:lenght(seq_in)
+    for
 
-    end
-    [~, min_pos] = min(diff);
-    seq_out((i*m-1):(i*m)) = label(min_pos,:);
-end 
-end 
