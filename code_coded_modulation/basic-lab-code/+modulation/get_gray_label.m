@@ -11,5 +11,29 @@ function [label] = get_gray_label(m)
 
 label = zeros(2^m,m);
 
+
+A = [0;1];
+
+if m == 1
+    label = A;
+end 
+
+for i = 2:m
+  
+   B = flipud(A);
+   C = [A; B];
+   prefix_0 = zeros(2^(i-1),1);
+   prefix_1 = ones(2^(i-1),1);
+   prefix = [prefix_0; prefix_1];
+   A = [prefix,C];
+
+end 
+
+label = A;
+
 end
+
+
+
+
 
