@@ -44,7 +44,9 @@ m = log2(M);
 %Create the gray label for M-QAM
 gray_1D = +modulation.get_gray_label(m/2); % size of  gray-1D : level x (m/2)
                                            % a QAM symbol carries m bits in total, but since QAM has two independent axes (I and R),the bits are split equally:m/2 bits for I and m/2 bitsfor R
-                                                                                                                                    
+                                           
+                                           
+                                                                                          
 k = 1;
 for col = 1 : level
     for row = 1: level
