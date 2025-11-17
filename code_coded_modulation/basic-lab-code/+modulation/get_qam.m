@@ -41,12 +41,13 @@ X = X_norm(:).';
 m = log2(M);
 
 
-%Create the gray label for M-QAM
+% Create the gray label for M-QAM
 gray_1D = +modulation.get_gray_label(m/2); % size of  gray-1D : level x (m/2)
                                            % a QAM symbol carries m bits in total, but since QAM has two independent axes (I and R),the bits are split equally:m/2 bits for I and m/2 bitsfor R
-                                                                                                                                    
+
+% Combine I- and R-axis gray codes to form m-bit labels for each constellation point                                         
 k = 1;
-for col = 1 : level
+for col = 1 : level        % first col than row because MATLAB reads matrices coloumn by coloumn, we have also used this in X = X_norm(:).' therefore the labeling must follow the same order
     for row = 1: level
         gray_I = gray_1D(col,:); % I-achse gray code
         gray_R = gray_1D(row,:); % R-achse gray code
