@@ -19,8 +19,8 @@ label = zeros(M,log2(M));
 % e^jθ=cosθ+jsinθ is used for rotation
 
 for i = 0:M-1
-    delta = ((2*pi)/M)*i;
-    X(i+1) = 1*exp(1j*delta); % the amlitude for PSK is always 1
+    phase = ((2*pi)/M)*i;
+    X(i+1) = 1*exp(1j*phase); % the amlitude for PSK is always 1
 end
     
 label = +modulation.get_gray_label(log2(M));
