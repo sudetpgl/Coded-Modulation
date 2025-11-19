@@ -38,7 +38,7 @@ end
 %     label = [00, 01, 11, 10]
 %      X = [j, 1, -1, -j]
 % For m = 2 ve extract each element of seq_in (such as at first 01)
-% We search for this bits sequence in  labela and find its index in label(such as 01 of seq_in -> 2. index on label)
+% We search for this bits sequence in  label and find its index in label(such as 01 of seq_in -> 2. index on label)
 % Then we take the symbol from X at that index, which tells us the change in phase (such as at the 2. index of X we have 1 which mean no phase change)
 
 
