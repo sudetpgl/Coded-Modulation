@@ -15,3 +15,4 @@ for i = 1:length(seq_in)
     seq_out((i*m-1):(i*m)) = label(min_pos,:);
 end 
 end 
+
