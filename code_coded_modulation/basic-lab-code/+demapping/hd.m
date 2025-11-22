@@ -14,5 +14,6 @@ for i = 1:length(seq_in)
     [~, min_pos] = min(diff);
     seq_out((i*m-1):(i*m)) = label(min_pos,:);
 end 
+seq_out = uint8(seq_out);
 end 
 
