@@ -1,5 +1,5 @@
-param.modulation.type = 'ask'; % one of 'ook', 'ask', 'psk', 'qam', 'dpsk'
-param.modulation.M = 4;
+param.modulation.type = 'ook'; % one of 'ook', 'ask', 'psk', 'qam', 'dpsk'
+param.modulation.M = 1;
 
 % initialize parameter
 param = modulation.initialize(param);
