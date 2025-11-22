@@ -1,5 +1,5 @@
 clear
-param.modulation.type = 'ask'; % one of 'ook', 'ask', 'psk', 'qam', 'dpsk'
+param.modulation.type = 'ook'; % one of 'ook', 'ask', 'psk', 'qam', 'dpsk'
 param.modulation.M = 4;
 param.demapping.type = 'hard';
 param.demapping.is_initialized = true;

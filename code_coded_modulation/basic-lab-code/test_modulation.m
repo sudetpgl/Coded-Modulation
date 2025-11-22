@@ -1,4 +1,4 @@
-param.modulation.type = 'dpsk'; % one of 'ook', 'ask', 'psk', 'qam', 'dpsk'
+param.modulation.type = 'ask'; % one of 'ook', 'ask', 'psk', 'qam', 'dpsk'
 param.modulation.M = 4;
 
 % initialize parameter

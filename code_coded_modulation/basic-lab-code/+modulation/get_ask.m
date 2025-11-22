@@ -1,5 +1,4 @@
-function [X,label] = get_ask(M) % output [X, label]
-
+function [X,label] = get_ask(M) 
 %GET_ASK Initialization of M-Amplitude-Shift-Keying (M-ASK) constellation.
 %Outputs the points and the labels of an M-ASK constellation with unit
 %average power.

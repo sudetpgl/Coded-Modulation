@@ -1,6 +1,7 @@
 function [seq_out] = hd(seq_in,X,label)
-%HD Summary of this function goes here
-%   Detailed explanation goes here
+% The function calculates the minimum distance between seq_in and
+% constellation and puts seq_out the corresponding binary element from
+% label.
 
 seq_out = zeros(1,length(seq_in)*size(label,2));
 m = size(label,2);
