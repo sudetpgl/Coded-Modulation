@@ -1,6 +1,7 @@
 function [seq_out] = hard_repetition(seq_in,n,k)
-%HARD_REPETITION Summary of this function goes here
-%   Detailed explanation goes here
+%HARD_REPETITION Take blocks of bits that represent one input bit and
+%checks which has the highest occurance (0 or 1) and reconstruct the input
+%sequence.
 
 seq_out = uint8(zeros(1,k));
 nr = n/k;

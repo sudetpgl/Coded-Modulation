@@ -21,7 +21,7 @@ for i = 2:length(seq_in)
 end
 
 seq_out = +demapping.hd(phase_diff,X,label);
- 
+
 % hd needs komplex input therefore we haven't use angle() function for phase_diff
 
 end
