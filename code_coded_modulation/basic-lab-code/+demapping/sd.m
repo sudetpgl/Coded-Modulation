@@ -16,6 +16,6 @@ for i = 1:num_symb
         seq_out((i-1)*bpsymb + b) = llr;
     end
 end
-
+seq_out = uint8(seq_out);
 end
 
