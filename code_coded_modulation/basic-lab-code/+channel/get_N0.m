@@ -5,15 +5,15 @@ function [N0] = get_N0(snr_type, snr_dB, M, X, coderate)
 
 N0 = 0;
 snr = 10^(snr_dB/10);
+Es = 1/M*sum(X.^2);
+Eb = 1/M*sum(X.^2)/(log2(M)*coderate);
 switch snr_type
     case 'ebn0'
-        Eb = 1/M*sum(X.^2)/(log2(M)*coderate);
         N0 = Eb/snr;
     case 'esn0'
-        Es = 1/M*sum(X.^2);
         N0 = Es/snr;
     case 'snr'
-       N0 = 1/M*sum(X.^2)/snr;
+       N0 = 10*log(Es)/snr_dB;
 end
 
 end
