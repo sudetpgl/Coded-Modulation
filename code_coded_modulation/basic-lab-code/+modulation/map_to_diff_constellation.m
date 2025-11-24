@@ -19,20 +19,21 @@ m = size(label,2);
 
 seq_out = zeros(1,length(seq_in)/m);
 
-prev_symbol = 1; %exp(1j*0)
+prev_symbol = 1+0j; %exp(1j*0)
 
 i = 1;
-for j = 1:m:length(seq_in) 
-     
-     idx_label = find(all(label == seq_in(j:j+m-1),2));
-     phase = X(idx_label);
-     symbol = prev_symbol * phase;
-     seq_out(i) = symbol;
-     prev_symbol = symbol;
-     i = i+1;
-end 
+for j = 1 : m : length(seq_in)
+    bits = seq_in(j : j + m - 1);
+    idx = find(all(label == bits, 2));
+    phase_inc = X(idx);
+    symbol = prev_symbol * phase_inc;
+    symbol = symbol / abs(symbol);  % normalize amplitude
+    seq_out(i) = symbol;
+    prev_symbol = symbol;
+    i = i + 1;
 end
 
+end
 
 % e.g seq_in = [0,1,0,0,1,1,1,0]
 %     label = [00, 01, 11, 10]

@@ -16,11 +16,23 @@ phase_diff = zeros(1,length(seq_in)-1);
 % by multiplying the symbol with its complax conjugate so that we can get: e.g A.B.e ^ phase_k - phase_k-1
 j = 1;
 for i = 2:length(seq_in)
-    phase_diff(j) = seq_in(i) * conj(seq_in(i-1));
+    ph_norm = seq_in(i) * conj(seq_in(i-1));
+    ph_norm = ph_norm/abs(ph_norm); %normalize so only phase matters
+    phase_diff(i - 1) = ph_norm;
     j = j + 1;
 end
 
-seq_out = +demapping.hd(phase_diff,X,label);
+ % Demap each phase difference to the closest constellation point
+K = length(phase_diff);
+decoded_bits = zeros(1, K * m);
+bitpos = 1;
+for k = 1:K
+    dist2 = abs(phase_diff(k) - X).^2;
+    [~, idx] = min(dist2);
+    decoded_bits(bitpos : bitpos + m - 1) = label(idx, :);
+    bitpos = bitpos + m;
+end
+seq_out = [zeros(1, m), decoded_bits];
 
 % hd needs komplex input therefore we haven't use angle() function for phase_diff
 
